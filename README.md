@@ -2,6 +2,8 @@
 
 A library implementing the [EDN format](https://github.com/edn-format/edn) for the Java [ResourceBundle](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html) API as well as some utilities to use ResourceBundles from Clojure. 
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.github.johnnyjayjay/edn-bundle.svg)](https://clojars.org/com.github.johnnyjayjay/edn-bundle)
+
 ## Usage
 
 Write your resource bundles in EDN:
