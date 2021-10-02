@@ -20,7 +20,13 @@ Write your resource bundles in EDN:
  :notifications.messages/new "Du hast {1, choice, 0#keine neuen Nachrichten|1#eine neue Nachricht|1<#{1, number, integer} neue Nachrichten} von {0} erhalten."}
 
 ;; ... etc.
+
 ```
+
+**IMPORTANT: Do not use keys that have the same String representation in a single map.**
+
+E.g. you should not use the key `:foo` and the key `":foo"` in the same edn resource, or `42` and `"42"`.\
+The reason for this is the fact that only string keys are allowed in resource bundles, so edn-bundle will coerce all top-level keys to strings. Thus, information is lost in the cases mentioned above.
 
 Load them in Clojure:
 
