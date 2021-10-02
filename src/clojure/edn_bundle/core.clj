@@ -3,14 +3,10 @@
    (java.util Locale ResourceBundle ResourceBundle$Control)
    (com.github.johnnyjayjay.ednbundle EdnResourceBundle$Control)))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
-
 (def edn-control (EdnResourceBundle$Control.))
 
 (defn ^ResourceBundle get-bundle
+  "Get a java.util.ResourceBundle using the given parameters."
   [^String base-name & {:keys [^Locale locale ^ClassLoader loader ^ResourceBundle$Control control]}]
   (cond
     (and locale loader control) (ResourceBundle/getBundle base-name locale loader control)
@@ -20,5 +16,7 @@
     locale (ResourceBundle/getBundle base-name locale)
     :else (ResourceBundle/getBundle base-name)))
 
-(defn get-object [^ResourceBundle bundle key]
+(defn get-object
+  "Retrieve an object from a resource bundle."
+  [^ResourceBundle bundle key]
   (.getObject bundle (str key)))
