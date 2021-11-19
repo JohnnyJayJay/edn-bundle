@@ -20,9 +20,10 @@ public class EdnResourceBundle extends ResourceBundle {
     public EdnResourceBundle(Object map) {
         ISeq keys = RT.keys(map);
         Object acc = RT.map();
-        while (keys.next() != null) {
+        while (keys != null) {
             Object key = keys.first();
             acc = RT.assoc(acc, key.toString(), RT.get(map, key));
+            keys = keys.next();
         }
         this.map = acc;
     }
