@@ -1,4 +1,4 @@
-(defproject com.github.johnnyjayjay/edn-bundle "0.1.0-SNAPSHOT"
+(defproject com.github.johnnyjayjay/edn-bundle "0.1.1-SNAPSHOT"
   :description "EDN format for Java's ResourceBundle API"
   :url "https://github.com/JohnnyJayJay/edn-bundle"
   :license {:name "MIT License"
